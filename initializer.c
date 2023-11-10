@@ -50,24 +50,18 @@ void shell_init(void)
 {
 	char *buff = NULL;
 	size_t len = 0;
-	ssize_t read_line;
 	int child_process_id;
 
 	while (1)
 	{
 		prompter(&buff, &len);
-		read_line = getline(&buff, (size_t *)len, stdin);
-		if (read_line == -1)
-		{
-			printf("\n");
-			break;
-		}
 		input_proc(buff);
+
 		child_process_id = fork();
 
 		if (child_process_id == -1)
 		{
-			printf("Error forking");
+			perror("Error forking");
 			free(buff);
 			exit(EXIT_FAILURE);
 		}
