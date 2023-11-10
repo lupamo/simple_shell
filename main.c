@@ -6,6 +6,6 @@
 
 int main(void)
 {
-	void shell_init();
+	shell_init();
 	return(0);
 }

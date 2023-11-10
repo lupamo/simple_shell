@@ -31,10 +31,11 @@ void input_proc(char *buff_inp)
  */
 void command_exec(char *cmd)
 {
-	char *args[2];
+	char *args[3];
 
-	args[0] = cmd;
-	args[1] = NULL;
+	args[0] = strtok(cmd, " ");
+	args[1] = strtok(NULL, " ");
+	args[2] = NULL;
 
 	if (execve(args[0], args, NULL) == -1)
 	{
@@ -68,6 +69,7 @@ void shell_init(void)
 		if (child_process_id == 0)
 		{
 			command_exec(buff);
+			exit(0);
 		}
 		else
 		{
