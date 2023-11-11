@@ -10,6 +10,9 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
-void shell_init(void);
+void command_exec(char *cmd);
+void prompter(char **buff_inp, size_t *size_buff);
+void input_proc(char *buff_inp);
+void command_exec(char *cmd);
 
 #endif
