@@ -1,7 +1,11 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+#define BUFF_SIZE 91
+
+
 #include <stdio.h>
+#include <errno.h>
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <unistd.h>
