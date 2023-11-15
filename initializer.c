@@ -19,9 +19,7 @@ void prompter(char **buff_inp, size_t *size_buff)
  */
 void input_proc(char *buff_inp)
 {
-	size_t line_len = strlen(buff_inp);
-
-	if (line_len && buff_inp[line_len - 1] == '\n')
+	if (buff_inp[strlen(buff_inp) - 1] == '\n')
 	{
 		buff_inp[strlen(buff_inp) - 1] = '\0';
 	}
