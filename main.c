@@ -33,6 +33,6 @@ int main(void)
 			wait(NULL);
 		}
 	}
-	free(buff);	
+	free(buff);
 	return (0);
 }
