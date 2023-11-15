@@ -19,7 +19,7 @@ int main(void)
 
 		if (child_process_id == -1)
 		{
-			perror("Error`forking");
+			perror("Error Forking");
 			free(buff);
 			exit(EXIT_FAILURE);
 		}
@@ -33,5 +33,6 @@ int main(void)
 			wait(NULL);
 		}
 	}
-	free(buff);
+	free(buff);	
+	return (0);
 }
